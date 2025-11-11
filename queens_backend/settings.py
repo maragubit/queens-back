@@ -131,6 +131,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+# Ruta absoluta en el sistema donde se recopilarán los archivos estáticos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Directorios adicionales donde Django buscará archivos estáticos (aparte de los de las apps)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
