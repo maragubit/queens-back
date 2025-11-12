@@ -25,3 +25,10 @@ class UserVerySimpleSerializer(serializers.ModelSerializer):
         model = User
         fields = ['first_name','last_name', 'image']
         read_only_fields = fields
+        
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email', 'password', 'first_name', 'last_name', 'phone', 'birthdate']
+
+    

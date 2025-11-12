@@ -70,7 +70,7 @@ ROOT_URLCONF = 'queens_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,3 +156,13 @@ REST_FRAMEWORK = {
 }
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'          # Servidor SMTP (ejemplo: Gmail)
+EMAIL_PORT = 587                       # Puerto (587 para TLS, 465 para SSL)
+EMAIL_USE_TLS = True                   # True si usas TLS (recomendado)
+EMAIL_HOST_USER = 'maragubit@gmail.com' # Tu correo emisor
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")  # Contraseña o app password
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER   # Dirección "De:"

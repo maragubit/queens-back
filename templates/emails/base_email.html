@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block subject %}Invitación{% endblock %}</title>
+  </head>
+  <body style="font-family:Arial,sans-serif; background:#f5f5f5; padding:20px;">
+    <div class="container" style="max-width:600px; margin:auto; background:white; padding:20px; border-radius:8px;">
+        <h4 class="text-center">Queens English Academy</h4>
+        <img class="justify-content-center" src="https://queensenglishinstitute.netlify.app/static/media/logoHD.5efa0853dbe0e5180ac3.png" alt="Queens English Academy" style="max-width:150px;"/>
+      {% block content %}{% endblock %}
+      <hr>
+      <p style="font-size:12px; color:#888;">© {{ year }} Queens English Academy. Todos los derechos reservados.</p>
+    </div>
+  </body>
+</html>
