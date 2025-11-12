@@ -15,6 +15,11 @@ from django.template.loader import render_to_string
 from rest_framework import permissions
 from students.models import Student
 from courses.models import Course
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 
 
@@ -27,7 +32,8 @@ def register_user(request):
         if not created:
             messages.error(request, f"El correo {email} ya ha sido registrado previamente.")
             return redirect('admin:index')
-        link = f"http://localhost:3000/register/{email}"
+        front_domain=os.getenv("FRONT_DOMAIN")
+        link = f"{front_domain}/register/{email}"
 
         # Contexto para la plantilla HTML
         context = {
