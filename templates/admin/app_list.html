@@ -67,7 +67,7 @@
                 {% if model.admin_url %}
                   <a href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}>LINK</a>
                 {% else %}
-                  Link para registrar usuarios <form method="post" action="{% url 'register_user' %}">{% csrf_token %}<input type="text" name="email" placeholder="email de usuario"><input style="margin-left:5px" type="submit" value="Enviar"></form>
+                  Link para registrar usuarios <form method="post" action="{% url 'register_link' %}">{% csrf_token %}<input type="text" name="email" placeholder="email de usuario"><input style="margin-left:5px" type="submit" value="Enviar"></form>
                 {% endif %}
                 {% if messages %}
                   <ul class="messages">
