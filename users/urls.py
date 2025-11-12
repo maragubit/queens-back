@@ -8,5 +8,5 @@ router.register(r'', UserSimpleViewSet, basename='user')
 registerUser = RegisterUserViewSet.as_view({'post': 'register'})
 urlpatterns = [
     path('register/', registerUser, name='register_user'),
-    path("register_link/", registerUser, name="register_link"),
+    path("register_link/", register_user, name="register_link"),
     ] + router.urls
