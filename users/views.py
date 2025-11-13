@@ -66,7 +66,7 @@ def register_user(request):
 class UserSimpleViewSet(viewsets.ModelViewSet):
     queryset = User.objects.filter(is_active=True)
     serializer_class = UserSimpleSerializer
-    http_method_names = ['get']
+    http_method_names = ['get','patch']
     permission_classes = [IsAuthenticated]  # Allow only authenticated users
     
     @action(detail=False, methods=['get'], url_path='me')

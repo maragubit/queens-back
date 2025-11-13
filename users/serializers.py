@@ -7,7 +7,7 @@ class UserSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'role','first_name','last_name', 'image','phone','birthdate']
-        read_only_fields = fields
+        read_only_fields = ['id', 'username', 'email', 'role','first_name','last_name','phone','birthdate']
     
     def to_representation(self, instance):
         from teachers.serializers import TeacherSerializer
